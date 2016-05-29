@@ -41,5 +41,6 @@ public class MissingNumberInConsecutiveNumbers {
         int arr1[] = {-5,-4,-3,-1,0,1,2,3};
         MissingNumberInConsecutiveNumbers mn = new MissingNumberInConsecutiveNumbers();
         System.out.println(mn.findMissing(arr1));
+
     }
 }

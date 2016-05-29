@@ -22,7 +22,7 @@ public class MergeSortLinkList {
         head1 = sort(head1,isAscending);
         return sortedMerge(head, head1, isAscending);
     }
-    
+
     private Node sortedMerge(Node head1, Node head2, boolean isAscending){
         if(head1 == null){
             return head2;
@@ -48,7 +48,7 @@ public class MergeSortLinkList {
             }
         }
     }
-    
+
     private Node frontBackSplit(Node head){
         if(head == null){
             return null;
@@ -63,7 +63,7 @@ public class MergeSortLinkList {
         slow.next = null;
         return newHead;
     }
-    
+
     public static void main(String args[]){
         MergeSortLinkList msll = new MergeSortLinkList();
         LinkList ll = new LinkList();

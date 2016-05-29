@@ -12,7 +12,7 @@ public class SortArrayByFrequence {
 
     class SortNode{
         int count;
-        int firstIndex;
+        int index;
     }
     
     class FrequenceComparator implements Comparator<Integer>{
@@ -29,7 +29,7 @@ public class SortArrayByFrequence {
             }else if(n1.count < n2.count){
                 return 1;
             }else{
-                return n1.firstIndex < n2.firstIndex ? -1 : 1;
+                return n1.index < n2.index ? -1 : 1;
             }
         }
         
@@ -37,7 +37,7 @@ public class SortArrayByFrequence {
     
     public void sortByFrequence(Integer arr[]){
         Map<Integer,SortNode> countMap = new HashMap<Integer,SortNode>();
-        int index = 0;
+        int i = 0;
         for(int a : arr){
             if(countMap.containsKey(a)){
                 SortNode s = countMap.get(a);
@@ -45,10 +45,10 @@ public class SortArrayByFrequence {
             }else{
                 SortNode s = new SortNode();
                 s.count = 1;
-                s.firstIndex = index;
+                s.index = i;
                 countMap.put(a, s);
             }
-            index++;
+            i++;
         }
         
         FrequenceComparator freqComparator = new FrequenceComparator(countMap);

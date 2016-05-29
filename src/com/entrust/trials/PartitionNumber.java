@@ -38,6 +38,7 @@ public class PartitionNumber {
     public static void partition(int n) {
         partition(n, n, "");
     }
+
     // Recursive Algorithm
     public static void partition(int n, int max, String prefix) {
         if (n == 0) {
@@ -50,6 +51,8 @@ public class PartitionNumber {
         }
     }
 
+
+
     // Bottom up DP
     public static void bottomUpDp(int n){
     	Map<Integer,String> mem = new HashMap<Integer,String>();
@@ -60,16 +63,13 @@ public class PartitionNumber {
     	for (Map.Entry<Integer, String> e: mem.entrySet()){
     		System.out.println(e.getValue());
     	}
-    	/*while (n!=0){
-    		n = n-(n-1);
-    	}*/
     	
     }
 
     public static void main(String[] args) { 
         int N = 15;
-       partition(N);
-       //bottomUpDp(25);
+      partition(N);
+
     }
 
 }
