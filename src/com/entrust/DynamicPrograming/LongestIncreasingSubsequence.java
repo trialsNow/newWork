@@ -2,7 +2,8 @@ package com.entrust.DynamicPrograming;
 
 import java.util.*;
 /*
- * For example, given [10, 9, 2, 5, 3, 7, 101, 18], the longest increasing subsequence is [2, 3, 7, 101]. Therefore the length is 4.
+ * For example, given [10, 9, 2, 5, 3, 7, 101, 18], the longest increasing subsequence is [2, 3, 7, 101]. T
+ * herefore the length is 4.
 Let max[i] represent the length of the longest increasing subsequence so far.
 If any element before i is smaller than nums[i], then max[i] = max(max[i], max[j]+1).
 

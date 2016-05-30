@@ -9,7 +9,7 @@ import java.util.Arrays;
  * Sorted array
  * Reverse sorted array
  */
-public class KthElementInArray {
+public class KthLargestElementInArray {
     
     public int kthElement(int arr[],int k){
         int low = 0;
@@ -57,7 +57,7 @@ public class KthElementInArray {
     
     public static void main(String args[]){
         int arr[] = {6, 2, 1, 6, 8, 9, 6};
-        KthElementInArray kthElement = new KthElementInArray();
+        KthLargestElementInArray kthElement = new KthLargestElementInArray();
         System.out.print(kthElement.kthElement(arr, arr.length/2));
         System.out.print(Arrays.toString(arr));
     }

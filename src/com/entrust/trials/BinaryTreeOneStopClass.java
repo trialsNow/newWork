@@ -224,6 +224,30 @@ public class BinaryTreeOneStopClass {
             return Math.max(left, right) + 1;
         }
     }
+    public int longestConsecutive(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+
+        return longestConsecutiveHelper(root, 0, root.val + 1);
+    }
+
+    private int longestConsecutiveHelper(TreeNode root, int curLen, int target) {
+        if (root == null) {
+            return curLen;
+        }
+
+        if (root.val == target) {
+            curLen += 1;
+        } else {
+            curLen = 1;
+        }
+
+        int left = longestConsecutiveHelper(root.left, curLen, root.val + 1);
+        int right = longestConsecutiveHelper(root.right, curLen, root.val + 1);
+
+        return Math.max(curLen, Math.max(left, right));
+    }
 
     public static void main(String[] args){
         BinaryTreeOneStopClass bt = new BinaryTreeOneStopClass();
@@ -237,5 +261,6 @@ public class BinaryTreeOneStopClass {
         root.right.right= new TreeNode(15);
 
         System.out.println(bt.commonAncestor(root,root.right,root.left.right.left).val);
+        System.out.println(bt.longestConsecutive(root));
     }
 }
