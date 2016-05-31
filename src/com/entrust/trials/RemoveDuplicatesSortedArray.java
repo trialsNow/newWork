@@ -4,7 +4,7 @@ package com.entrust.trials;
  * Created by rathna on 2016-05-26.
  */
 import java.util.*;
-public class RemoveElementAndCheckSize {
+public class RemoveDuplicatesSortedArray {
 
     public static int shiftElements(int[] arr, int n){
         int k=0;

@@ -14,9 +14,6 @@ public class PrimeNumbersBeforeN {
         boolean flag = false;
         for(int i=3; i < n; i+=2){
             for(int r : result){
-               /* if(2*r > i){
-                    break;
-                }*/
                 if(i % r == 0){
                     flag = true;
                     break;

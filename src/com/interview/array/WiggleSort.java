@@ -21,7 +21,7 @@ public class WiggleSort {
             return;
         }
         int k = arr.length/2;
-        KthElementInArray kthElementInArray = new KthElementInArray();
+        KthLargestElementInArray kthElementInArray = new KthLargestElementInArray();
         kthElementInArray.kthElement(arr, k);
 
         int mid = arr[k];

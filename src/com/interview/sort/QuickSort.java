@@ -8,32 +8,6 @@ public class QuickSort {
         A[i] = A[j];
         A[j] = temp;
     }
-    private int split(int A[],int low,int high)
-    {
-        int pivot = low;
-        int i = low +1;
-        int j = high;
-        while(i<j)
-        {
-            while(i<=j && A[pivot]>=A[i])
-            {
-                i++;
-            }
-            while(j>=i && A[pivot]<A[j])
-            {
-                j--;
-            }
-            if(i < j && A[i]>A[j])
-            {
-                swap(A,i++,j--);
-            }
-        }
-        if(A[pivot] > A[j]){
-            swap(A,j,pivot);
-        }
-        return j;
-    }
-
     private int split1(int A[],int low,int high){
         
         int pivot = low;
@@ -49,9 +23,9 @@ public class QuickSort {
                 j--;
                 continue;
             }
-            swap(A,i++,j--);
+           swap(A,i++,j--);
         }
-        if(A[pivot] > A[j]){
+        if(A[pivot] >= A[j]){
             swap(A,pivot,j);
             return j;
         }
@@ -77,8 +51,8 @@ public class QuickSort {
     }
     public static void main(String args[]){
         QuickSort qs = new QuickSort();
-        int A[] = {11,19,0,-1,5,6,16,-3,6,0,14,18,7,21,18,-6,-8};
-//      int A[] = {11,9,0,4,6,-1,13};
+       int A[] = {11,19,0,-1,5,6,16,-3,6,0,14,18,7,21,18,-6,-8};
+ //int A[] = {101,1,2,8,17,71,101};
         qs.sort(A, 0, A.length-1);
         qs.printArray(A);
         

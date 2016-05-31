@@ -16,8 +16,8 @@ public class ConvertAnArrayIntoDecreaseIncreaseFashion {
         }else{
             k = arr.length/2+1;
         }
-        KthElementInArray kthElement = new KthElementInArray();
-        kthElement.kthElement(arr, k);
+        KthLargestElementInArray kth = new KthLargestElementInArray();
+        kth.kthElement(arr, k);
         
         int high = k;
         int low = 1;

@@ -10,7 +10,7 @@ If any element before i is smaller than nums[i], then max[i] = max(max[i], max[j
 
  */
 public class LongestIncreasingSubsequence {
-	public int usingDp(int[] nums) {
+	public static int usingDp(int[] nums) {
 	    if(nums==null || nums.length==0)
 	        return 0;
 	 
@@ -25,12 +25,12 @@ public class LongestIncreasingSubsequence {
 	        }
 	    }
 	 
-	    int result = 0;
+	   /* int result = 0;
 	    for(int i=0; i<max.length; i++){
 	        if(max[i]>result)
 	            result = max[i];
-	    }
-	    return result;
+	    }*/
+		return max[max.length-1];
 	}
 	/*
 	 * or each num in nums
@@ -41,7 +41,7 @@ public class LongestIncreasingSubsequence {
      else 
           replace the element in the list which is the smallest but bigger than num
 	 */
-	public int usingList(int[] nums) {
+	public static int usingList(int[] nums) {
 	    if(nums==null || nums.length==0)
 	        return 0;
 	 
@@ -70,5 +70,9 @@ public class LongestIncreasingSubsequence {
 	    }
 	 
 	    return list.size();
+	}
+
+	public static void main(String[] args){
+		System.out.println(usingList(new int[]{10, 9, 2, 5, 3, 7, 101, 18}));
 	}
 }

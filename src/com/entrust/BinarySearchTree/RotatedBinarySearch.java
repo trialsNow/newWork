@@ -47,5 +47,34 @@ public class RotatedBinarySearch {
 	  return L;
 	}
 
-	   
+	public static int searchTargetinRotatedSortedArray(int[] nums, int target) {
+		return binarySearch(nums, 0, nums.length-1, target);
+	}
+
+	public static int binarySearch(int[] nums, int left, int right, int target){
+		if(left>right)
+			return -1;
+
+		int mid = left + (right-left)/2;
+
+		if(target == nums[mid])
+			return mid;
+
+		if(nums[left] <= nums[mid]){
+			if(nums[left]<=target && target<nums[mid]){
+				return binarySearch(nums,left, mid-1, target);
+			}else{
+				return  binarySearch(nums, mid+1, right, target);
+			}
+		}else {
+			if(nums[mid]<target&& target<=nums[right]){
+				return  binarySearch(nums,mid+1, right, target);
+			}else{
+				return  binarySearch(nums, left, mid-1, target);
+			}
+		}
+	}
+	   public static void main(String[] args){
+		   System.out.println(searchTargetinRotatedSortedArray(new int[]{2,3,3,0,1},1));
+	   }
 }
