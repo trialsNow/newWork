@@ -23,9 +23,9 @@ public class InvertBinaryTree {
 
     public void helper(TreeNode p){
 
-        TreeNode temp = p.left;
+        TreeNode leftTemp = p.left;
         p.left = p.right;
-        p.right = temp;
+        p.right = leftTemp;
 
         if(p.left!=null)
             helper(p.left);

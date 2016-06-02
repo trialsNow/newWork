@@ -1,7 +1,8 @@
 package com.entrust.trials;
 
 /**
- * We can track the maximum index that can be reached. The key to solve this problem is to find: 1) when the current position can not
+ * We can track the maximum index that can be reached. The key to solve this problem is to find: 1)
+ * when the current position can not
  * reach next position (return false) , and 2) when the maximum index can reach the end (return true).
 
  The largest index that can be reached is: i + A[i].

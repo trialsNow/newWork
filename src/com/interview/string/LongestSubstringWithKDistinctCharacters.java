@@ -10,9 +10,10 @@ package com.interview.string;
  *
  * Time complexity O(n)
  * Space complexity O(n)
- *
- * https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/
+ * Logic: Add each char to hashmap with count.
+ * Until the map size becomes > K. The max
  */
+import java.util.*;
 public class LongestSubstringWithKDistinctCharacters {
     public static int lengthOfLongestSubstringKDistinct(String s, int k) {
         if (k == 0 || s.length() == 0) {
@@ -42,8 +43,42 @@ public class LongestSubstringWithKDistinctCharacters {
         }
         return max;
     }
-    
+    public static int longestSubstringKDistinct(String s, int k) {
+        int max=0;
+        HashMap<Character,Integer> map = new HashMap<Character, Integer>();
+        int start=0;
+
+        for(int i=0; i<s.length(); i++){
+            char c = s.charAt(i);
+            if(map.containsKey(c)){
+                map.put(c, map.get(c)+1);
+            }else{
+                map.put(c,1);
+            }
+
+            if(map.size()>k){
+                max = Math.max(max, i-start);
+
+                while(map.size()>k){
+                    char t = s.charAt(start);
+                    int count = map.get(t);
+                    if(count>1){
+                        map.put(t, count-1);
+                    }else{
+                        map.remove(t);
+                    }
+                    start++;
+                }
+            }
+        }
+
+        max = Math.max(max, s.length()-start);
+
+        return max;
+    }
+
+
     public static void main(String[] args){
-    	System.out.println(lengthOfLongestSubstringKDistinct("aabcde",2));
+    	System.out.println(longestSubstringKDistinct("aabcde",2));
     }
 }

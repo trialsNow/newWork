@@ -60,10 +60,10 @@ public class MovingAverage{
 	   // USing system console
 	   BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 	   //Or use File values
-	   inData = new DataInputStream(new BufferedInputStream(new FileInputStream(dataFile)));
+	   //inData = new DataInputStream(new BufferedInputStream(new FileInputStream(dataFile)));
 			   	  try {
 			   		while (true){
-					   long fromFile= inData.readLong();
+					   //long fromFile= inData.readLong();
 			   			double l = Double.parseDouble(reader.readLine());
 					   double average = avg.readNext(l);
 					   System.out.println("Moving Average:"+ average);

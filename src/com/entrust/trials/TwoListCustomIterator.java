@@ -2,11 +2,14 @@ package com.entrust.trials;
 
 import java.util.*;
 
-public class CustomIterator<Item extends Comparable<Item>> implements Iterable<Item>{
+/*
+a1b1,a2b2,a3b3
+ */
+public class TwoListCustomIterator<Item extends Comparable<Item>> implements Iterable<Item>{
 	private List<Item> strLst1;
 	private List<Item> strLst2;
 	
-	public CustomIterator(List<Item> items1,List<Item> items2){
+	public TwoListCustomIterator(List<Item> items1, List<Item> items2){
 		this.strLst1=items1;
 		this.strLst2=items2;
 	}
@@ -71,7 +74,7 @@ public class CustomIterator<Item extends Comparable<Item>> implements Iterable<I
 		lst2.add("b1");
 		lst2.add("b2");
 		lst2.add("b3");
-		CustomIterator<String> custom = new CustomIterator<>(lst1,lst2);
+		TwoListCustomIterator<String> custom = new TwoListCustomIterator<>(lst1,lst2);
 		Iterator<String> it = custom.iterator();
 		while (it.hasNext()){
 			System.out.println(it.next());

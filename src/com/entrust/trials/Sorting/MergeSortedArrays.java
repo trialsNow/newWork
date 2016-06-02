@@ -6,13 +6,17 @@ public class MergeSortedArrays {
 	
 	public static int[] merge(int[] a, int[] b) {
 	    int[] answer = new int[a.length + b.length];
-	    int i = a.length - 1, j = b.length - 1, k = answer.length;
+	    int i = 0, j =0, k = 0;
 
-	    while (k > 0) {
-			if ( j<0 || (i>=0 && a[i]>=b[j])){
-				answer[--k] =a[i--];
+	    while (k < answer.length) {
+			if ( j>=b.length || (i<a.length && a[i] <= b[j])){
+				answer[k] =a[i];
+				i++;
+				k++;
 			} else {
-				answer[--k] =b[j--];
+				answer[k] =b[j];
+				j++;
+				k++;
 			}
 	        //answer[--k] =
 	          //  (j < 0 || (i >= 0 && a[i] >= b[j])) ? a[i--] : b[j--];

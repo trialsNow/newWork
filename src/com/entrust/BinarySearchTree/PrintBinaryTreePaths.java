@@ -1,6 +1,7 @@
 package com.entrust.BinarySearchTree;
 // Java program to print all the node to leaf path
 
+import java.util.*;
 // A binary tree node
 class Node {
 
@@ -49,11 +50,7 @@ public class PrintBinaryTreePaths {
 
     /* Utility function that prints out an array on a line. */
     void printArray(int ints[], int len) {
-        int i;
-        for (i = 0; i < len; i++) {
-            System.out.print(ints[i] + " ");
-        }
-        System.out.println("");
+        System.out.println(Arrays.toString(ints));
     }
 
     // driver program to test above functions

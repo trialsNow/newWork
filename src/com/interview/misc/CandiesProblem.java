@@ -20,6 +20,7 @@ package com.interview.misc;
  *
  *
  */
+import java.util.*;
 public class CandiesProblem {
 
     public int minCandies(int ratings[]) {

@@ -1,6 +1,16 @@
 package com.entrust.BinarySearchTree;
 
 import java.util.HashMap;
+/*
+Logic: InOrder in hashmap for both cases..
+InOrderPreOrder
+Mid element is get(preOrd(0));. If mid > start build root left
+If mid<end build righttree
+
+InorderPost order
+Mid element is get(postOrd(length-1))
+Recurse post order r\backwards
+ */
 
 public class HashReconstructBinaryTree {
 

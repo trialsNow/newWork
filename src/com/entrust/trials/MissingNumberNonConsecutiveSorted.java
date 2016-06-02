@@ -40,6 +40,6 @@ public class MissingNumberNonConsecutiveSorted {
     }
 
     public static void main(String args[]){
-        System.out.println(findIndexOfClosestElement(new int[]{1,2,3,4,6,7,8,9},5));
+        System.out.println(findIndexOfClosestElement(new int[]{2,4,6,8,10},11));
     }
 }

@@ -2,9 +2,9 @@ package com.entrust.BinarySearchTree;
 
 public class RotatedBinarySearch {
 	
-	int rotated_binary_search(int A[], int N, int key) {
+	static int rotated_binary_search(int A[], int key) {
 		  int L = 0;
-		  int R = N - 1;
+		  int R = A.length - 1;
 		 
 		  while (L <= R) {
 		    // Avoid overflow, same as M=(L+R)/2
@@ -59,8 +59,9 @@ public class RotatedBinarySearch {
 
 		if(target == nums[mid])
 			return mid;
-
+		// If left most element is less than or qual to mid element. Pivot is in left side
 		if(nums[left] <= nums[mid]){
+
 			if(nums[left]<=target && target<nums[mid]){
 				return binarySearch(nums,left, mid-1, target);
 			}else{
@@ -75,6 +76,6 @@ public class RotatedBinarySearch {
 		}
 	}
 	   public static void main(String[] args){
-		   System.out.println(searchTargetinRotatedSortedArray(new int[]{2,3,3,0,1},1));
+		   System.out.println(rotated_binary_search(new int[]{2,3,3,0,1},1));
 	   }
 }

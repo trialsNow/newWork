@@ -16,7 +16,9 @@ private class Node {
 	 }
 	
 }
-	
+	/*From the pre-order array, we know that first element is the root.
+	We can find the root in in-order array. Then we can identify the left and right sub-trees of the root from in-order array.
+    Using the length of left sub-tree, we can identify left and right sub-trees in pre-order array. Recursively, we can build up the tree*/
 public Node buildTreeFromPreAndInOrder(int[] preorder, int[] inorder) {
     int preStart = 0;
     int preEnd = preorder.length-1;
@@ -31,22 +33,22 @@ public Node construct(int[] preorder, int preStart, int preEnd, int[] inorder, i
         return null;
     }
  
-    int val = preorder[preStart];
-    Node p = new Node(val);
+    int rootVal = preorder[preStart];
+    Node root = new Node(rootVal);
  
     //find parent element index from inorder
     int k=0;
     for(int i=0; i<inorder.length; i++){
-        if(val == inorder[i]){
+        if(rootVal == inorder[i]){
             k=i;
             break;
         }
     }
  
-    p.left = construct(preorder, preStart+1, preStart+(k-inStart), inorder, inStart, k-1);
-    p.right= construct(preorder, preStart+(k-inStart)+1, preEnd, inorder, k+1 , inEnd);
+    root.left = construct(preorder, preStart+1, preStart+(k-inStart), inorder, inStart, k-1);
+    root.right= construct(preorder, preStart+(k-inStart)+1, preEnd, inorder, k+1 , inEnd);
  
-    return p;
+    return root;
 }
 
 public Node buildTree(int[] inorder, int[] postorder) {
@@ -73,7 +75,7 @@ public Node buildTreeFromInPostOrder(int[] inorder, int inStart, int inEnd,
 			break;
 		}
 	}
- 
+ // k-1 means items before root value
 	root.left = buildTreeFromInPostOrder(inorder, inStart, k - 1, postorder, postStart,postStart + k - (inStart + 1));
 	// Becuase k is not the length, it it need to -(inStart+1) to get the length
 	root.right = buildTreeFromInPostOrder(inorder, k + 1, inEnd, postorder, postStart + k- inStart, postEnd - 1);

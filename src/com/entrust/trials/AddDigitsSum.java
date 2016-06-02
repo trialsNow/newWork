@@ -3,7 +3,8 @@ package com.entrust.trials;
 /**
  * O(1) Algo for sum Of digits :
 
- Taking the modulo 9 of any number will return the sum of digits of that number until a single digit number is obtained.
+ Taking the modulo 9 of any number will return the sum of digits of that number
+ until a single digit number is obtained.
 
  If the number is a multiple of 9, then the sum will will be 9
  */

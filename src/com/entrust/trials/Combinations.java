@@ -1,7 +1,9 @@
 package com.entrust.trials;
 
 /**
- * Created by rathna on 2016-05-29.
+ *
+ * k Combinations of 1..n
+ * Combinations formula n!/(n-1)!* k!
  */
 import java.util.*;
 public class Combinations {
@@ -20,7 +22,7 @@ public class Combinations {
     private static void dfs(int n, int k, int start, ArrayList<Integer> item,
                      ArrayList<ArrayList<Integer>> res) {
         if (item.size() == k) {
-            res.add(new ArrayList<Integer>(item));
+            res.add(new ArrayList<>(item));
             return;
         }
 
@@ -32,7 +34,7 @@ public class Combinations {
     }
 
     public static void main(String[] args){
-        ArrayList<ArrayList<Integer>> ds = Combinations.combine(10,4);
+        ArrayList<ArrayList<Integer>> ds = Combinations.combine(3,2);
         for (ArrayList a: ds){
             System.out.println(Arrays.toString(a.toArray()));
         }

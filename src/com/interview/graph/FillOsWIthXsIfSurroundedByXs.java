@@ -1,5 +1,7 @@
 package com.interview.graph;
 
+import java.util.Arrays;
+
 /**
  * Date 04/17/2016
  * @author Tushar Roy
@@ -12,9 +14,9 @@ package com.interview.graph;
  */
 public class FillOsWIthXsIfSurroundedByXs {
 
-    public void solve(char[][] board) {
+    public char[][] solve(char[][] board) {
         if (board.length == 0 || board[0].length == 0) {
-            return;
+            return null;
         }
         for (int i = 0; i < board.length; i++) {
             dfs(board, i, 0);
@@ -36,6 +38,7 @@ public class FillOsWIthXsIfSurroundedByXs {
                 }
             }
         }
+        return board;
     }
 
     private void dfs(char[][] board, int i, int j) {
@@ -65,10 +68,11 @@ public class FillOsWIthXsIfSurroundedByXs {
     public static void main(String args[]){
         FillOsWIthXsIfSurroundedByXs fo = new FillOsWIthXsIfSurroundedByXs();
         char board[][] = {{'X','X','X','X'},
-                          {'X','X','O','X'},
+                          {'O','O','O','X'},
                           {'X','O','X','X'},
-                          {'X','X','O','X'}};
+                          {'X','X','O','X'},
+                          {'X','X','X','X'}};
         
-        fo.solve(board);
+        System.out.println(Arrays.deepToString(fo.solve(board)));
     }
 }

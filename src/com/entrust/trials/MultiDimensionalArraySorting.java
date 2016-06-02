@@ -6,8 +6,10 @@ import java.util.Comparator;
 public class MultiDimensionalArraySorting {
 
 	public static void main(String[] args) {
-	Integer unSorted[][] = {{1,2,3},{2,3,1},{3,1,2},
-			 {1,3,2}};
+	Integer unSorted[][] = {{0,1,2},
+			                {6,7,8},
+			                {3,14,5},
+			                {11,12,10}};
 	 System.out.println("Unsorted:"+Arrays.deepToString(unSorted));
 	 Arrays.sort(unSorted,new ColumnComparator(0,SortingOrder.ASCENDING));
 	 System.out.println("Sorted:"+Arrays.deepToString(unSorted));

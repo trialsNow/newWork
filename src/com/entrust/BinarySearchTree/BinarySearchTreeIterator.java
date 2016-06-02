@@ -9,7 +9,15 @@ package com.entrust.BinarySearchTree;
  */
 
 import java.util.*;
-public class BinarySearchTreeIterator {
+public class BinarySearchTreeIterator<Integer> implements Iterable{
+    TreeNode root;
+
+    @Override
+    public Iterator iterator(){
+
+        return new BSTIterator(root);
+    }
+
     public class TreeNode {
         int val;
         TreeNode left;
@@ -18,9 +26,10 @@ public class BinarySearchTreeIterator {
         TreeNode(int x) {
             val = x;
         }
+    }
 
 
-        public class BSTIterator {
+        public class BSTIterator implements Iterator<java.lang.Integer> {
             Stack<TreeNode> stack;
 
             public BSTIterator(TreeNode root) {
@@ -30,12 +39,13 @@ public class BinarySearchTreeIterator {
                     root = root.left;
                 }
             }
-
+            @Override
             public boolean hasNext() {
                 return !stack.isEmpty();
             }
 
-            public int next() {
+            @Override
+            public java.lang.Integer next() {
                 TreeNode node = stack.pop();
                 int result = node.val;
                 if (node.right != null) {
@@ -49,4 +59,4 @@ public class BinarySearchTreeIterator {
             }
         }
     }
-}
+

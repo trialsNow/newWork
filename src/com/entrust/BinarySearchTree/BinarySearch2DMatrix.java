@@ -1,10 +1,12 @@
 package com.entrust.BinarySearchTree;
 
 /**
- * Created by rathna on 2016-05-29.
+ * Find mid of matrix X and Y. If mid==target return
+ * if mid<target look for elements below mid
+ * If mid >target look for elements above mid
  */
 public class BinarySearch2DMatrix {
-    public boolean searchMatrix(int[][] matrix, int target) {
+    public static boolean searchMatrix(int[][] matrix, int target) {
         if(matrix==null || matrix.length==0 || matrix[0].length==0)
             return false;
 
@@ -30,5 +32,11 @@ public class BinarySearch2DMatrix {
         }
 
         return false;
+    }
+    public static void main(String[] args){
+        int[][] matrix = {{1,2,3},
+                          {2,3,4},
+                          {7,8,9}};
+        System.out.println(searchMatrix(matrix,9));
     }
 }
