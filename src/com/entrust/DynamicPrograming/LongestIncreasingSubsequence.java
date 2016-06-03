@@ -68,7 +68,7 @@ public class LongestIncreasingSubsequence {
 	            list.set(j, num);
 	        }
 	    }
-	 
+		System.out.println(Arrays.toString(list.toArray()));
 	    return list.size();
 	}
 
