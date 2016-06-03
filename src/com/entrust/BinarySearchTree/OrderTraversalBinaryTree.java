@@ -209,10 +209,10 @@ public void inOrderTraversal(Node root){
      System.out.print("Pre order traversal of binary tree is - ");
      tree_level.preOrder(tree_level.root);
      System.out.println("");
-     System.out.print("Pre order traversal of binary tree using Stack - ");
+     System.out.print("Pre order traversal of binary tree using StackUsingSingleLinkedList - ");
      tree_level.preorderTraversalNonRecursive(tree_level.root);
      System.out.println("");
-     System.out.print("Post order traversal of binary tree using Stack - ");
+     System.out.print("Post order traversal of binary tree using StackUsingSingleLinkedList - ");
      tree_level.postOrderTraversalUsingStack(tree_level.root);
      System.out.println("");
      

@@ -1,7 +1,10 @@
 package com.entrust.trials;
 
 /**
- * Created by rathna on 2016-05-29.
+ *A robot is located at the top-left corner of a m x n grid.
+ * It can only move either down or right at any point in time.
+ * The robot is trying to reach the bottom-right corner of the grid.
+ *
  */
 public class UniquePathsRobot {
     public int uniquePaths(int m, int n) {

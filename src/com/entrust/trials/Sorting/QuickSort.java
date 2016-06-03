@@ -1,134 +1,71 @@
 package com.entrust.trials.Sorting;
+/*
+Quick Sort logic:
+	1. Find Split position.
+		a. Mark first element(a[0]) as pivot, i as 1 and j as length-1;
+		Do this until i<=j;
+		b. Scan from left to right comparing a[i]..with piv.
+			1. If a[i]<=a[piv] go to next element
+			2. If a[j] > a[pivot], deccrement j
+			3. Else swap (i++,j--) values
+		c. After the loop check if a[pivot] >= a[j] if yes swap(pivot,j) values.
+	2. Get the split position and recursively call with sort(A,0,splitPos-1) and sort(A,splitPos+1,high)
+ */
+public class QuickSort {
 
-import java.util.Comparator;
-
-/* Divide and conquer algorithm
- * Sets a pivot and recursively moves lesser than pivot to left and > to right
- * complexity of quick sort in the average case is Θ(n log(n)) and in the worst case is Θ(n2).
- * */
-public class QuickSort<T extends Comparator> {
-
-    // This class should not be instantiated.
-    private QuickSort() { }
-
-    /**
-     * Rearranges the array in ascending order, using the natural order.
-     * @param a the array to be sorted
-     */
-    public static void sort(Comparable[] a) {
-        sort(a, 0, a.length - 1);
-        assert isSorted(a);
+    private void swap(int A[],int i,int j)
+    {
+        int temp = A[i];
+        A[i] = A[j];
+        A[j] = temp;
     }
-
-    // quicksort the subarray from a[lo] to a[hi]
-    private static void sort(Comparable[] a, int lo, int hi) { 
-        if (hi <= lo) return;
-        int j = partition(a, lo, hi);
-        sort(a, lo, j-1);
-        sort(a, j+1, hi);
-        assert isSorted(a, lo, hi);
-    }
-
-    // partition the subarray a[lo..hi] so that a[lo..j-1] <= a[j] <= a[j+1..hi]
-    // and return the index j.
-    private static int partition(Comparable[] a, int lo, int hi) {
-        int i = lo;
-        int j = hi + 1;
-        Comparable v = a[lo];
-        while (true) { 
-
-            // find item on lo to swap
-        	
-            while (a[++i].compareTo(v) < 0){
-                if (i == hi) {
-                	break;
-                }
-            }
-
-            // find item on hi to swap
-            while (a[--j].compareTo(v)>0){
-                if (j == lo) {
-                	break;      // redundant since a[lo] acts as sentinel
-                }
-            }
-
-            // check if pointers cross
-            if (i >= j) break;
-
-            exch(a, i, j);
-        }
-
-        // put partitioning item v at a[j]
-        exch(a, lo, j);
-
-        // now, a[lo .. j-1] <= a[j] <= a[j+1 .. hi]
-        return j;
-    }
-
-    /**
-     * Rearranges the array so that a[k] contains the kth smallest key;
-     * a[0] through a[k-1] are less than (or equal to) a[k]; and
-     * a[k+1] through a[N-1] are greater than (or equal to) a[k].
-     * @param a the array
-     * @param k find the kth smallest
-     */
-    public static Comparable select(Comparable[] a, int k) {
-        if (k < 0 || k >= a.length) {
-            throw new IndexOutOfBoundsException("Selected element out of bounds");
-        }
-        int lo = 0, hi = a.length - 1;
-        while (hi > lo) {
-            int i = partition(a, lo, hi);
-            if      (i > k) hi = i - 1;
-            else if (i < k) lo = i + 1;
-            else return a[i];
-        }
-        return a[lo];
-    }
-
-
-
-   /***************************************************************************
-    *  Helper sorting functions.
-    ***************************************************************************/
-    
-    // is v < w ?
-    private static boolean less(Comparable v, Comparable w) {
-        return v.compareTo(w) < 0;
-    }
+    private int split1(int A[],int low,int high){
         
-    // exchange a[i] and a[j]
-    private static void exch(Object[] a, int i, int j) {
-        Object swap = a[i];
-        a[i] = a[j];
-        a[j] = swap;
+        int pivot = low;
+        int i = low+1;
+        int j = high;
+        while(i <= j){
+            
+            if(A[i] <= A[pivot]){
+                i++;
+                continue;
+            }
+            if(A[j] > A[pivot]){
+                j--;
+                continue;
+            }
+           swap(A,i++,j--);
+        }
+        if(A[pivot] >= A[j]){
+            swap(A,pivot,j);
+            return j;
+        }
+        return pivot;
+        
     }
 
-
-   /***************************************************************************
-    *  Check if array is sorted - useful for debugging.
-    ***************************************************************************/
-    private static boolean isSorted(Comparable[] a) {
-        return isSorted(a, 0, a.length - 1);
-    }
-
-    private static boolean isSorted(Comparable[] a, int lo, int hi) {
-        for (int i = lo + 1; i <= hi; i++)
-            if (less(a[i], a[i-1])) return false;
-        return true;
-    }
-
-
-    // print array to standard output
-    private static void show(Comparable[] a) {
-        for (int i = 0; i < a.length; i++) {
-            System.out.println(a[i]);
+    public void sort(int A[],int low,int high)
+    {
+        if(low>=high)
+        {
+            return;
+        }
+        int pos = split1(A,low,high);
+        sort(A,low,pos-1);
+        sort(A,pos+1,high);
+    }   
+    
+    private void printArray(int arr[]){
+        for(int a : arr){
+            System.out.println(a);
         }
     }
-    
-    public static void main (String[] args){
-    	Integer[] a = {7,2,1,8,6,3,5,4};
-    	sort(a);
-		show(a);
+    public static void main(String args[]){
+        QuickSort qs = new QuickSort();
+       int A[] = {11,19,0,-1,5,6,16,-3,6,0,14,18,7,21,18,-6,-8};
+ //int A[] = {101,1,2,8,17,71,101};
+        qs.sort(A, 0, A.length-1);
+        qs.printArray(A);
+        
     }
 }

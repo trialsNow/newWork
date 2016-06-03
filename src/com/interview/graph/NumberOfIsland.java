@@ -30,6 +30,11 @@ public class NumberOfIsland {
         if(graph[i][j] == 0){
             return;
         }
+        /*
+        Diagonal : T[i-1][j-1], T[i+1][j-1]
+Left : T[i-1][j]
+Top : T[i][j-1]
+         */
         DFS(graph,visited,i,j+1);
         DFS(graph,visited,i+1,j);
         DFS(graph,visited,i+1,j+1);

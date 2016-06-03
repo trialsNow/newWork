@@ -1,4 +1,4 @@
-package com.entrust.trials;
+package com.entrust.trials.datastructures;
 
 import java.util.*;
 
@@ -9,7 +9,7 @@ import java.util.*;
  * q2 has values
  * check which queue has values and then pop from there
  */
-public class StackImplUsingQueues {
+public class StackUsingQueues {
         Queue<Integer> queue1 = new LinkedList<>();
         Queue<Integer> queue2 = new LinkedList<>();
 
@@ -62,7 +62,7 @@ public class StackImplUsingQueues {
         }
 
     public static void main(String[] args){
-        StackImplUsingQueues stack = new StackImplUsingQueues();
+        StackUsingQueues stack = new StackUsingQueues();
         stack.push(10);
         stack.push(9);
         stack.push(8);

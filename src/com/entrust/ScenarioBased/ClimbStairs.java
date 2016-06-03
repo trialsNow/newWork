@@ -5,7 +5,8 @@ package com.entrust.ScenarioBased;
  * Let the total number of ways to reach n’t stair be ‘ways(n)’. The value of ‘ways(n)’ can be written as following.
 
  ways(n) = ways(n-1) + ways(n-2)
- The above expression is actually the expression for Fibonacci numbers, but there is one thing to notice, the value of ways(n) is equal to fibonacci(n+1).
+ The above expression is actually the expression for Fibonacci numbers,
+ but there is one thing to notice, the value of ways(n) is equal to fibonacci(n+1).
 
  ways(1) = fib(2) = 1
  ways(2) = fib(3) = 2

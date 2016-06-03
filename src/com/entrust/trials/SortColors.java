@@ -6,10 +6,19 @@ package com.entrust.trials;
 
  Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.
  */
+import java.util.*;
 public class SortColors {
-    public void sortColors(int[] nums) {
-        if(nums==null||nums.length<2){
-            return;
+    public static PriorityQueue sortColors(int[] nums) {
+        PriorityQueue<Integer> sortedPq = new PriorityQueue<>();
+
+        for (Integer i : nums) {
+            sortedPq.offer(i);
+        }
+        return sortedPq;
+    }
+
+       /* if(nums==null||nums.length<2){
+            return nums;
         }
 
         int[] countArray = new int[3];
@@ -27,5 +36,13 @@ public class SortColors {
                 j++;
             }
         }
+        return nums;
+    }*/
+    public static void main(String[] args){
+     PriorityQueue<Integer> rslt = sortColors(new int[]{1,2,0,2,1,0,2,2,1});
+        while(!rslt.isEmpty()) {
+            System.out.println(rslt.poll());
+        }
+
     }
 }

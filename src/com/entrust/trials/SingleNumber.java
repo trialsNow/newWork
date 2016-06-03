@@ -37,5 +37,9 @@ public class SingleNumber {
     public static void main(String[] args){
      System.out.println(singleNumber(new int[] {1,2,3,4,1,2,3,4,5}));
         System.out.println(Arrays.toString(singleNumberTwoElementsNotSame(new int[] {1,2,3,4,1,2,3,4,5,6})));
+        System.out.println(112&333);
+        System.out.println(9|8);
+        System.out.println(9^8);
+        System.out.println(8^9);
     }
 }

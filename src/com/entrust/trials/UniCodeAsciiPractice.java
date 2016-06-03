@@ -10,7 +10,7 @@ The "Java digits" include the ASCII digits 0-9 (\u0030-\u0039).
  *
  */
 public class UniCodeAsciiPractice {
-	static final \u0069nt \u611b = 3;
+	//static final \u0069nt \u611b = 3;
 	public static void main(String[] args) {
 		int bitmask = 0x6400;
         int val = 0x2222;

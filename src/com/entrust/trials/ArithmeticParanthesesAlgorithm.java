@@ -3,7 +3,7 @@ import java.util.*;
 /******************************************************************************
  *  Compilation:  javac Evaluate.java
  *  Execution:    java Evaluate
- *  Dependencies: Stack.java
+ *  Dependencies: StackUsingSingleLinkedList.java
  *
  *  Evaluates (fully parenthesized) arithmetic expressions using
  *  Dijkstra's two-stack algorithm.

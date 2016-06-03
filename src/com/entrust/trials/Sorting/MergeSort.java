@@ -1,6 +1,21 @@
 package com.entrust.trials.Sorting;
 import java.util.*;
+/*
+he Algorithm Pseudocode:
 
+MergeSort (Array(First..Last))
+Begin
+If Array contains only one element Then
+     Return Array
+Else
+     Middle= ((Last + First)/2) rounded down to the nearest integer
+     LeftHalfArray = MergeSort(Array(First..Middle))
+     RightHalfArray = MergeSort(Array(Middle+1..Last))
+     ResultArray = Merge(LeftHalfArray, RightHalfArray)
+     Return ResultArray
+EndIf
+End MergeSort
+ */
 	public class MergeSort
 	{
 	    // Main function that sorts arr[l..r] using

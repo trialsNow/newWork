@@ -16,7 +16,7 @@ public class SingleLinkedListEvenOddGrouping{
            this.data=data;
         }
     }
-    public TreeNode oddEvenList(TreeNode head) {
+    public static TreeNode oddEvenList(TreeNode head) {
         if(head == null)
             return head;
 
@@ -49,6 +49,7 @@ public class SingleLinkedListEvenOddGrouping{
         head.next.next = new TreeNode(13);
         head.next.next.next = new TreeNode(14);
         head.next.next.next = new TreeNode(15);
+        oddEvenList(head);
         
     }
 

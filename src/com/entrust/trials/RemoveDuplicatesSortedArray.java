@@ -6,7 +6,7 @@ package com.entrust.trials;
 import java.util.*;
 public class RemoveDuplicatesSortedArray {
 
-    public static int shiftElements(int[] arr, int n){
+    public static int[] shiftElements(int[] arr, int n){
         int k=0;
         int m=0;
         for (int i=0;i<arr.length;i++){
@@ -19,7 +19,7 @@ public class RemoveDuplicatesSortedArray {
                 k++;
             }
         }
-        return  m;
+        return  arr;
     }
 
     public int removeDuplicatesOnlyTwiceallowed(int[] A) {
@@ -43,6 +43,6 @@ public class RemoveDuplicatesSortedArray {
     }
 
     public static void main(String[] args){
-        System.out.println(shiftElements(new int[]{1,2,3,3,3,6},3));
+        System.out.println(Arrays.toString(shiftElements(new int[]{1,2,3,3,3,6},3)));
     }
 }

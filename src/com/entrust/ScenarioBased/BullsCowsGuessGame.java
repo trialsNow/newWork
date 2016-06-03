@@ -3,6 +3,7 @@ package com.entrust.ScenarioBased;
 /**
  * Created by rathna on 2016-05-31.
  */
+import java.lang.Character;
 public class BullsCowsGuessGame {
     public static String getHint(String secret, String guess) {
         int countBull=0;
@@ -17,8 +18,8 @@ public class BullsCowsGuessGame {
             if(c1==c2)
                 countBull++;
             else{
-                arr1[c1-'0']=1;
-                arr2[c2-'0']=1;
+                arr1[Character.getNumericValue(c1)]=1;
+                arr2[Character.getNumericValue(c1)]=1;
             }
         }
 

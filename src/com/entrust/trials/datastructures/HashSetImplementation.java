@@ -19,7 +19,6 @@ public class HashSetImplementation<E>{
  
     /**
      * Method returns true if set contains the object.
-     * @param key
      */
     public boolean contains(E obj){
            return hashMapCustom.contains(obj) !=null ? true :false;
@@ -226,6 +225,7 @@ private class HashMapCustom<K, V> {
     /**
      * Method implements hashing functionality, which helps in finding the appropriate bucket location to store our data.
      * This is very important method, as performance of HashMapCustom is very much dependent on  this method's implementation.
+     * Modulo Hashing algorithm
      * @param key
      */
     private int hash(K key){

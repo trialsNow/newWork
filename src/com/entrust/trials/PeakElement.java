@@ -46,7 +46,7 @@ class PeakElement
     // Driver method
     public static void main (String[] args)
     {
-        int arr[] = {1, 3, 20, 4, 1, 0};
+        int arr[] = {1, 3, 5, 4, 1, 20};
         int n = arr.length;
         System.out.println("Index of a peak point is " +
                 findPeak(arr, n));

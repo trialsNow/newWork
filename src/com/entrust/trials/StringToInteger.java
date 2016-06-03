@@ -7,6 +7,7 @@ package com.entrust.trials;
  4. calculate real value
  5. handle min & max
  */
+import java.lang.Character;
 public class StringToInteger {
     public static int atoi(String str) {
         if (str == null || str.length() < 1)
@@ -31,7 +32,7 @@ public class StringToInteger {
         // calculate value
         while (str.length() > i && str.charAt(i) >= '0' && str.charAt(i) <= '9') {
             char c=str.charAt(i);
-            int n = c-'0';
+            int n = Character.getNumericValue(c);
             result = result * 10 + n;
             i++;
         }
@@ -49,7 +50,7 @@ public class StringToInteger {
         return (int) result;
     }
     public static void main(String[] args){
-        System.out.println(atoi("-156"));
+        System.out.println(atoi("-15-6"));
 
     }
 }

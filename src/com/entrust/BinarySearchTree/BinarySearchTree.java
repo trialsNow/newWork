@@ -3,7 +3,7 @@ package com.entrust.BinarySearchTree;
 
 import java.util.NoSuchElementException;
 
-import com.entrust.trials.datastructures.Stack;
+import com.entrust.trials.datastructures.StackUsingSingleLinkedList;
 
 import java.util.*;
 
@@ -420,7 +420,7 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
     
     public Iterable<Key> inOrder(){
     	Queue<Key> keys = new LinkedList<>();
-    	Stack<Node> nodes = new Stack<>();
+    	StackUsingSingleLinkedList<Node> nodes = new StackUsingSingleLinkedList<>();
     	Node n = root;
     	while (!nodes.isEmpty() || n!=null){
     		 if (n!=null){

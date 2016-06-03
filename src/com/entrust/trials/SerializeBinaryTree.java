@@ -50,6 +50,7 @@ private static TreeNode deserialize(StringTokenizer st){
     if (val.equals("#"))
         return null;
     TreeNode root = new TreeNode(Integer.parseInt(val));
+    System.out.println(root.val);
     root.left = deserialize(st);
     root.right = deserialize(st);
     return root;
@@ -69,7 +70,7 @@ public static void main(String args[])
     tree_level.root.left.left.left = new TreeNode(8);
     String ser =serialize(tree_level.root);
     System.out.println(ser);
-    System.out.println(deserialize(ser));
+    deserialize(ser);
     
 }
 }

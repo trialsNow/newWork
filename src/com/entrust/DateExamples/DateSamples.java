@@ -4,7 +4,7 @@ import java.time.*;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 
-public class RangeCheck {
+public class DateSamples {
 	
 	static class Interval{
 		LocalDate dob;

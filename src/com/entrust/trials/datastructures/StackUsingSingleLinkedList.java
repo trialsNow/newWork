@@ -1,8 +1,8 @@
 package com.entrust.trials.datastructures;
 
 /******************************************************************************
- *  Compilation:  javac Stack.java
- *  Execution:    java Stack < input.txt
+ *  Compilation:  javac StackUsingSingleLinkedList.java
+ *  Execution:    java StackUsingSingleLinkedList < input.txt
  *
  *  A generic stack, implemented using a linked list. Each stack
  *  element is of type Item.
@@ -10,7 +10,7 @@ package com.entrust.trials.datastructures;
  *  % more tobe.txt 
  *  to be or not to - be - - that - - - is
  *
- *  % java Stack < tobe.txt
+ *  % java StackUsingSingleLinkedList < tobe.txt
  *  to be not that or be (2 left on stack)
  *
  ******************************************************************************/
@@ -20,7 +20,7 @@ import java.util.NoSuchElementException;
 
 
 /**
- *  The <tt>Stack</tt> class represents a last-in-first-out (LIFO) stack of generic items.
+ *  The <tt>StackUsingSingleLinkedList</tt> class represents a last-in-first-out (LIFO) stack of generic items.
  *  It supports the usual <em>push</em> and <em>pop</em> operations, along with methods
  *  for peeking at the top item, testing if the stack is empty, getting the number of
  *  items in the stack, and iterating over the items in LIFO order.
@@ -38,7 +38,7 @@ import java.util.NoSuchElementException;
  *
  *  @param <Item> the generic type of an item in this stack
  */
-public class Stack<Item> implements Iterable<Item> {
+public class StackUsingSingleLinkedList<Item> implements Iterable<Item> {
     private int N;          // size of the stack
     private Node first;     // top of stack
 
@@ -51,7 +51,7 @@ public class Stack<Item> implements Iterable<Item> {
    /**
      * Initializes an empty stack.
      */
-    public Stack() {
+    public StackUsingSingleLinkedList() {
         first = null;
         N = 0;
     }
@@ -94,7 +94,7 @@ public class Stack<Item> implements Iterable<Item> {
      * @throws NoSuchElementException if this stack is empty
      */
     public Item pop() {
-        if (isEmpty()) throw new NoSuchElementException("Stack underflow");
+        if (isEmpty()) throw new NoSuchElementException("StackUsingSingleLinkedList underflow");
         Item item = first.item;        // save item to return
         first = first.next;            // delete first node
         N--;
@@ -109,7 +109,7 @@ public class Stack<Item> implements Iterable<Item> {
      * @throws NoSuchElementException if this stack is empty
      */
     public Item peek() {
-        if (isEmpty()) throw new NoSuchElementException("Stack underflow");
+        if (isEmpty()) throw new NoSuchElementException("StackUsingSingleLinkedList underflow");
         return first.item;
     }
 
@@ -149,10 +149,10 @@ public class Stack<Item> implements Iterable<Item> {
 
 
     /**
-     * Unit tests the <tt>Stack</tt> data type.
+     * Unit tests the <tt>StackUsingSingleLinkedList</tt> data type.
      */
     public static void main(String[] args) {
-        Stack<String> s = new Stack<String>();
+        StackUsingSingleLinkedList<String> s = new StackUsingSingleLinkedList<String>();
         /*while (!StdIn.isEmpty()) {
            // String item = StdIn.readString();
             if (!item.equals("-")) s.push(item);

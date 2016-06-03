@@ -47,8 +47,8 @@ public class TopKthFrequentElement {
             while(queue.size()>0){
                 result.add(queue.poll().num);
             }
-            //reverse the order
-           // Collections.reverse(result);
+           // reverse the order
+           Collections.reverse(result);
 
             return result;
         }

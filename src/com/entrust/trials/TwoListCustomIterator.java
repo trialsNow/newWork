@@ -74,6 +74,7 @@ public class TwoListCustomIterator<Item extends Comparable<Item>> implements Ite
 		lst2.add("b1");
 		lst2.add("b2");
 		lst2.add("b3");
+		lst2.add("b4");
 		TwoListCustomIterator<String> custom = new TwoListCustomIterator<>(lst1,lst2);
 		Iterator<String> it = custom.iterator();
 		while (it.hasNext()){

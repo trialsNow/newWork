@@ -1,7 +1,8 @@
 package com.entrust.trials.datastructures;
 
 /**
- * If we have 2 pointers - fast and slow. It is guaranteed that the fast one will meet the slow one if there exists a circle.
+ * If we have 2 pointers - fast and slow.
+ * It is guaranteed that the fast one will meet the slow one if there exists a circle.
  */
 public class LinkedListCycle {
 
